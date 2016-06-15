@@ -1,0 +1,26 @@
+<%= form_tag 'search' do %>
+  <%= text_field_tag :value, @value %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h2>Results for <%= @value %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @result.each do |offer| %>
+      <tr>
+        <td><%= offer.name %></td>
+        <td><%= offer.description %></td>
+        <td><%= offer.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

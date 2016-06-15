@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  post "search" => "home#search"
+
   resources :pictures
   resources :rents
   resources :offers
