@@ -15,6 +15,7 @@ class OffersController < ApplicationController
   # GET /offers/new
   def new
     @offer = Offer.new
+    @categories = Category.all
   end
 
   # GET /offers/1/edit
