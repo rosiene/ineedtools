@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  offer_id: 
+  initial_date: 2016-06-15
+  final_date: 2016-06-15
+
+two:
+  user_id: 
+  offer_id: 
+  initial_date: 2016-06-15
+  final_date: 2016-06-15
