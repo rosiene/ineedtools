@@ -21,6 +21,21 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.text_field :avatar, autofocus: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
