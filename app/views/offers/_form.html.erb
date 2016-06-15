@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -29,11 +25,15 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.select(:category_id, @categories.map { |category| [category.name, category.id] }) %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
     <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label :pictures %><br>
+    <%= f.file_field :pictures %><br><br>
   </div>
   <div class="actions">
     <%= f.submit %>
