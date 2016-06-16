@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get "search" => "home#search"
 
   devise_for :users
-
-  devise_for :users
   resources :reviews
   resources :pictures
   resources :rents
