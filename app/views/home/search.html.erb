@@ -12,27 +12,15 @@
 
 <h2>Results for <%= @value %></h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Offers</th>
-      <th></th>
-      <th>Price</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @result.each do |offer| %>
-      <tr>
-        <td>
-          <% if offer.pictures.first != nil %>
-            <%= image_tag offer.pictures.first.link %></td>
-          <% end %>
-        <td>
-          <h4><%= offer.name %></h4>
-          <%= offer.description %></td>
-        <td><%= offer.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @result.each do |offer| %>
+    <div class="col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <%= link_to image_tag('tool.jpg'), new_rent_path(offer_id: offer.id) %></td>
+        <h4><%= offer.name %></h4>
+        <%= offer.price %>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,3 +1,4 @@
+
 <%= form_for(@rent) do |f| %>
   <% if @rent.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +12,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :offer_id %><br>
-    <%= f.text_field :offer_id %>
-  </div>
   <div class="field">
     <%= f.label :initial_date %><br>
     <%= f.date_select :initial_date %>
