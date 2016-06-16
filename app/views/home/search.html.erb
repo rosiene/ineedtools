@@ -1,15 +1,22 @@
-<%= form_tag 'search' do %>
-  <%= text_field_tag :value, @value %>
-  <%= submit_tag "Search" %>
-<% end %>
+<br>
+<div class="form-group row">
+  <%= form_tag 'search' do %>
+    <div class="col-xs-9">
+      <%= text_field_tag :value, @value, class: "form-control" %>
+    </div>
+    <div class="col-xs-3">
+      <%= submit_tag "Search", class:"btn btn-default" %>
+    </div>
+  <% end %>
+</div>
 
 <h2>Results for <%= @value %></h2>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Offers</th>
+      <th></th>
       <th>Price</th>
     </tr>
   </thead>
@@ -17,8 +24,13 @@
   <tbody>
     <% @result.each do |offer| %>
       <tr>
-        <td><%= offer.name %></td>
-        <td><%= offer.description %></td>
+        <td>
+          <% if offer.pictures.first != nil %>
+            <%= image_tag offer.pictures.first.link %></td>
+          <% end %>
+        <td>
+          <h4><%= offer.name %></h4>
+          <%= offer.description %></td>
         <td><%= offer.price %></td>
       </tr>
     <% end %>
