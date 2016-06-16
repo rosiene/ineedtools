@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   root "home#index"
 
   post "search" => "home#search"
+  get "search" => "home#search"
+
+  devise_for :users
 
   devise_for :users
   resources :reviews
   resources :pictures
-  resources :rents 
+  resources :rents
   resources :offers
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
