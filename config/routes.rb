@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index'
+
   root "home#index"
 
   post "search" => "home#search"
   get "search" => "home#search"
-  
+
   devise_for :users
 
+  devise_for :users
+  resources :reviews
   resources :pictures
   resources :rents
   resources :offers

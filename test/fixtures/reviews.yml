@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eval: 1
+  comment: MyText
+  rent_id: 
+
+two:
+  eval: 1
+  comment: MyText
+  rent_id: 
