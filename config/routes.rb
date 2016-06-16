@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index'
+
   root "home#index"
 
   post "search" => "home#search"
 
   devise_for :users
-
+  resources :reviews
   resources :pictures
-  resources :rents do
-    resources :reviews
-  end
+  resources :rents 
   resources :offers
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
