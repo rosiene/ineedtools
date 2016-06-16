@@ -1,9 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Allerta+Stencil);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body{
-  font-family: 'Poiret One', cursive;
+  font-family: 'Allerta Stencil', sans-serif;
 }
 
 h1{
@@ -18,6 +18,10 @@ footer{
   margin-top: 20px
 }
 
+.main{
+  margin: 0px 20px;
+}
+
 .panel-heading{
   text-align: center;
 }
@@ -29,4 +33,8 @@ footer{
 
 .navbar{
   margin-bottom: 0px;
+}
+
+.thumbnail{
+  text-align: center;
 }

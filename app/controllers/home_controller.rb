@@ -5,29 +5,48 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params[:value] != nil
-      session[:search_value] = params[:value]
+    session[:search_name] = params[:name]
+    session[:search_category] = params[:category_id]
+
+    @categories = Category.all
+
+    offers = search_by_category(params[:category_id])
+    @result = search_by_name(offers, params[:name])
+
+  end
+
+private
+
+  def search_by_category(category_id)
+    if category_id != nil && category_id != ""
+      Offer.where(category_id: category_id)
+    else
+      Offer.all
     end
-    value = session[:search_value]
-    @result = []
+  end
 
-    offers = Offer.all
+  def search_by_name(offers, all_name)
+    result = []
 
-    all_search = value.upcase
-    @word_search = value.upcase.split " "
+    if all_name == nil || offers == nil
+      return offers
+    end
+
+    all_name = all_name.upcase
+    name_array = all_name.upcase.split " "
 
     offers.each do |offer|
-      if offer.name.upcase.include? all_search
-        @result << offer
+      if offer.name.upcase.include? all_name
+        result << offer
       else
-        @word_search.each do |word|
-          if offer.name.upcase.include?(word) && !@result.include?(offer)
-            @result << offer
+        name_array.each do |word|
+          if offer.name.upcase.include?(word) && !result.include?(offer)
+            result << offer
           end
         end
       end
     end
-
+    result
   end
 
 end
