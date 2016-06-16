@@ -15,8 +15,8 @@ class RentsController < ApplicationController
   # GET /rents/new
   def new
     @rent = Rent.new
-    @offer = Offer.find(params[:offer_id])
-    @rent.offer_id = @offer.id
+    #@offer = Offer.find(params[:offer_id])
+    @rent.offer_id = params[:offer_id]
   end
 
   # GET /rents/1/edit
@@ -27,6 +27,7 @@ class RentsController < ApplicationController
   # POST /rents.json
   def create
     @rent = Rent.new(rent_params)
+    @rent.user = current_user
 
     respond_to do |format|
       if @rent.save
