@@ -15,12 +15,11 @@ footer{
   color: #888;
   padding: 20px;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height:100px;
-  background:#ccc;
+  margin-top: 20px
+}
+
+.panel-heading{
+  text-align: center;
 }
 
 .home{

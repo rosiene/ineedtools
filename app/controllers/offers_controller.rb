@@ -20,6 +20,7 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /offers
@@ -32,6 +33,7 @@ class OffersController < ApplicationController
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
         format.json { render :show, status: :created, location: @offer }
       else
+        @categories = Category.all
         format.html { render :new }
         format.json { render json: @offer.errors, status: :unprocessable_entity }
       end
@@ -46,6 +48,7 @@ class OffersController < ApplicationController
         format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
         format.json { render :show, status: :ok, location: @offer }
       else
+        @categories = Category.all
         format.html { render :edit }
         format.json { render json: @offer.errors, status: :unprocessable_entity }
       end

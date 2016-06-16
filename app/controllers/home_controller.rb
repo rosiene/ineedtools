@@ -5,13 +5,16 @@ class HomeController < ApplicationController
   end
 
   def search
-    @value = params[:value]
+    if params[:value] != nil
+      session[:search_value] = params[:value]
+    end
+    value = session[:search_value]
     @result = []
 
     offers = Offer.all
 
-    all_search = @value.upcase
-    @word_search = @value.upcase.split " "
+    all_search = value.upcase
+    @word_search = value.upcase.split " "
 
     offers.each do |offer|
       if offer.name.upcase.include? all_search

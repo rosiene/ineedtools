@@ -2,7 +2,7 @@
 <div class="form-group row">
   <%= form_tag 'search' do %>
     <div class="col-xs-9">
-      <%= text_field_tag :value, @value, class: "form-control" %>
+      <%= text_field_tag :value, session[:search_value], class: "form-control" %>
     </div>
     <div class="col-xs-3">
       <%= submit_tag "Search", class:"btn btn-default" %>
@@ -10,29 +10,17 @@
   <% end %>
 </div>
 
-<h2>Results for <%= @value %></h2>
+<h2>Results for <%= session[:search_value] %></h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Offers</th>
-      <th></th>
-      <th>Price</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @result.each do |offer| %>
-      <tr>
-        <td>
-          <% if offer.pictures.first != nil %>
-            <%= image_tag offer.pictures.first.link %></td>
-          <% end %>
-        <td>
-          <h4><%= offer.name %></h4>
-          <%= offer.description %></td>
-        <td><%= offer.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @result.each do |offer| %>
+    <div class="col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <%= link_to image_tag('tool.jpg'), new_rent_path(offer_id: offer.id) %></td>
+        <h4><%= offer.name %></h4>
+        <%= offer.price %>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
