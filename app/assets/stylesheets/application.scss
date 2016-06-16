@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  font-family: 'Poiret One', cursive;
+}
+
+h1{
+  font-size: 96px;
+}
+
+.home{
+//  background: url('index-tools.jpg') no-repeat fixed center;
+  text-align: center;
+}
+
+.navbar{
+  margin-bottom: 0px;
+}
