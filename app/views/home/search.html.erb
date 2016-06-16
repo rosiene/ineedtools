@@ -2,7 +2,7 @@
 <div class="form-group row">
   <%= form_tag 'search' do %>
     <div class="col-xs-9">
-      <%= text_field_tag :value, @value, class: "form-control" %>
+      <%= text_field_tag :value, session[:search_value], class: "form-control" %>
     </div>
     <div class="col-xs-3">
       <%= submit_tag "Search", class:"btn btn-default" %>
@@ -10,7 +10,7 @@
   <% end %>
 </div>
 
-<h2>Results for <%= @value %></h2>
+<h2>Results for <%= session[:search_value] %></h2>
 
 <div class="row">
   <% @result.each do |offer| %>
