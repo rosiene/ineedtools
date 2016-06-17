@@ -10,7 +10,7 @@
     </select>
   </div>-->
 
-<div><%= f.text_field :eval, class: "form-control" %></div>
-  <div><%= f.text_field :comment, class: "form-control" %></div>
-  <div><%= f.submit "Create", class: "btn" %></div>
+<div><%= f.text_field :eval, class: "form-control" , placeholder: 'Evaluate the Rental from 1 to 5'%></div>
+  <div><%= f.text_field :comment, class: "form-control", placeholder: 'Comment the Rental, others will love to know your opinion' %> </div>
+  <div><%= f.submit "Save", class: "btn" %></div>
 <% end %>

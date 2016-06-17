@@ -4,11 +4,11 @@ class ReviewsController < ApplicationController
     rent = Rent.find( params[:rent_id] )
     review = Review.new( rent: rent, user: current_user, eval: review_params[:eval], comment: review_params[:comment])
     review.save
-    redirect_to rents_path
+    redirect_to reviews_path
   end
 
   def index
-    @reviews = Review.all
+    @reviews = Review.order(updated_at: :desc)
   end
-  
+
 end

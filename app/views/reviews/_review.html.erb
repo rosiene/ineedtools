@@ -1,6 +1,10 @@
 <div>
   <p>Rent Experience: <%= review.eval %></p>
-    <em> Comment: <%= review.comment %></em>
+    <em> Comment: <%= review.comment %>
+      <em>
+      <h6><%= review.updated_at.to_date %></h6>
+      <em>
+    </em>
 
   <p>────────────────────────────────────</p>
 </div>
