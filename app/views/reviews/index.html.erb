@@ -1,5 +1,7 @@
 <h1>Reviews</h1>
+<% if user_signed_in? %>
+  <%= render "form" %>
+  <br>
+<% end %>
 
-<%= render "form" %>
-<br>
 <%= render @reviews %>
