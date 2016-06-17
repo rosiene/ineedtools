@@ -9,8 +9,11 @@
       <option>5</option>
     </select>
   </div>-->
+  <!--<div class="form-group">
+    <%= f.label :rent_id %>
+    <%= f.select(:rent_id, @user.rent.map {|rent| [rent.name, rent.id]}, {}, class:"form-control" )%></div>-->
   <div><%= f.text_field :eval, class: "form-control" , placeholder: 'Evaluate the Rental from 1 to 5'%></div>
-    <div><%= f.text_field :comment, class: "form-control", placeholder: 'Comment the Rental, others will love to know your opinion' %> </div>
+  <div><%= f.text_field :comment, class: "form-control", placeholder: 'Comment the Rental, others will love to know your opinion' %> </div>
     <div><%= f.submit "Save", class: "btn" %>
   </div>
 <% end %>
