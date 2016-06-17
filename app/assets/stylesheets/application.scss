@@ -4,15 +4,20 @@
 
 body{
   font-family: 'Allerta Stencil', sans-serif;
+  margin-top: 100px;
 }
 
 h1{
   font-size: 96px;
+  color: white;
+}
+
+h6{
+  font-size: 11px
 }
 
 footer{
-  background-color: #eee;
-  color: #888;
+  background-color: black;
   padding: 20px;
   text-align: center;
   margin-top: 20px
@@ -27,14 +32,92 @@ footer{
 }
 
 .home{
-//  background: url('index-tools.jpg') no-repeat fixed center;
   text-align: center;
+  position: relative;
 }
 
 .navbar{
   margin-bottom: 0px;
 }
 
-h6{
-  font-size: 11px
+.thumbnail{
+  text-align: center;
+}
+<<<<<<< HEAD
+||||||| merged common ancestors
+
+.thumbnail{
+  text-align: center;
+}
+=======
+
+img.bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-fixed-bottom {
+   height: 55px;
+   background-color: black;
+   color: white;
+   padding: 20px;
+   text-align: center;
+}
+
+.main{
+  margin: 0px 20px;
+}
+
+.panel-heading{
+  text-align: center;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  &:visited {
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.image_tool{
+ width: 200px;
 }
