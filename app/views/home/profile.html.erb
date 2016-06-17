@@ -17,6 +17,7 @@
       <th>Description</th>
       <th>Category</th>
       <th>Available</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,7 @@
         <td><%= offer.category_id %></td>
         <td><%= offer.description  %></td>
         <td><%= offer.status %></td>
+        <td><%= link_to 'Edit', offers_path %>
     <% end %>
   </tbody>
 </table>
@@ -38,6 +40,7 @@
       <th>Description</th>
       <th>From</th>
       <th>Till</th>
+      <th>Review</th>
     </tr>
   </thead>
   <tbody>
@@ -47,6 +50,7 @@
          <td><%= rent.offer.description %></td>
          <td><%= rent.initial_date %></td>
          <td><%= rent.final_date %></td>
+         <td><%= link_to "Review", reviews_path %>
     <% end %>
   </tbody>
 </table>
