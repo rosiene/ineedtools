@@ -15,6 +15,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    @offer_id = params[:offer]
   end
 
   # GET /pictures/1/edit
@@ -28,8 +29,8 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render :show, status: :created, location: @picture }
+        format.html { redirect_to profile_path, notice: 'Picture was successfully created.' }
+        format.json { render profile_path, status: :created, location: @picture }
       else
         format.html { render :new }
         format.json { render json: @picture.errors, status: :unprocessable_entity }

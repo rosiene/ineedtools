@@ -11,15 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :offer_id %><br>
-    <%= f.text_field :offer_id %>
+  <div class="form-group">
+    <%= f.hidden_field(:offer_id, value:@offer_id) %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
+  <div class="form-group">
     <%= f.file_field :image %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Upload", class:"btn btn-default" %>
   </div>
 <% end %>
