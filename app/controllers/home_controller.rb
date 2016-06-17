@@ -4,6 +4,10 @@ class HomeController < ApplicationController
 
   end
 
+  def profile
+     @user = current_user
+  end
+
   def search
     @value = params[:value]
     @result = []
