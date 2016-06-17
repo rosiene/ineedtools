@@ -1,15 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @rent.user %>
-</p>
-
-<p>
-  <strong>Offer:</strong>
-  <%= @rent.offer %>
-</p>
-
+<h4>
+  <%= "Total price: #{(@rent.final_date - @rent.initial_date) * @rent.offer.price}" %>
+</h4>
 <p>
   <strong>Initial date:</strong>
   <%= @rent.initial_date %>
@@ -20,5 +12,14 @@
   <%= @rent.final_date %>
 </p>
 
-<%= link_to 'Edit', edit_rent_path(@rent) %> |
+  <h4>Contact Information</h4>
+  Name: <%= @rent.offer.user.name %><br>
+  Phone <%= @rent.offer.user.phone %><br>
+  Email: <%= @rent.offer.user.email %><br>
+</p>
+
+<p>
+  <%= render 'offers/offer' %>
+</p>
+
 <%= link_to 'Back', rents_path %>

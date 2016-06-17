@@ -3,7 +3,7 @@
     <h3><%= @rent.offer.name %></h3>
   </div>
   <div class="panel-body">
-    <%= image_tag 'tool.jpg' %></td>
+    <center><%= image_tag @rent.offer.pictures.first.image.thumbnail.url, class:"image_tool" %></center>
     <h4>Details</h4>
     <p>
       Category: <%= link_to @rent.offer.category.name, category_path(@rent.offer.category.id) %>

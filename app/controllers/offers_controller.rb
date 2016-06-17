@@ -31,8 +31,8 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
-        format.json { render :show, status: :created, location: @offer }
+        format.html { redirect_to new_picture_path offer: @offer.id, notice: 'Offer was successfully created.' }
+        format.json { render new_picture, status: :created }
       else
         @categories = Category.all
         format.html { render :new }
