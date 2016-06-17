@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post "search" => "home#search"
   get "search" => "home#search"
+  get "profile" => "home#profile"
 
   devise_for :users
   resources :reviews
