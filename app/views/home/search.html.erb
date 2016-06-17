@@ -1,26 +1,36 @@
 <br>
 <div class="form-group row">
-  <%= form_tag 'search' do %>
-    <div class="col-xs-9">
-      <%= text_field_tag :value, session[:search_value], class: "form-control" %>
-    </div>
-    <div class="col-xs-3">
-      <%= submit_tag "Search", class:"btn btn-default" %>
-    </div>
-  <% end %>
-</div>
 
-<h2>Results for <%= session[:search_value] %></h2>
-
-<div class="row">
-  <% @result.each do |offer| %>
     <div class="col-sm-3 col-md-3">
-      <div class="thumbnail">
-        <%= link_to image_tag('tool.jpg'), new_rent_path(offer_id: offer.id) %></td>
-        <h4><%= offer.name %></h4>
-        <%= offer.price %>
-        </a>
+      <!-- FORM SEACH -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+            I need...
+          </p>
+          <%= form_tag 'search' do %>
+            <%= text_field_tag :name, session[:search_name], class: "form-control", placeholder:"Tool Name" %><br>
+            <%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :name, session[:search_category]), include_blank: 'Any category', class:"form-control" %><br>
+            <%= submit_tag "Search", class:"btn btn-default" %>
+          <% end %>
+        </div>
       </div>
     </div>
-  <% end %>
-</div>
+
+    <div class="col-sm-9 col-md-9">
+      <!-- RESULTS -->
+      <div class="row">
+        <% @result.each do |offer| %>
+          <div class="col-sm-3 col-md-3">
+            <div class="thumbnail">
+              <%= link_to image_tag('tool.jpg'), new_rent_path(offer_id: offer.id) %></td>
+              <h4><%= link_to offer.name, new_rent_path(offer_id: offer.id) %></h4>
+              <%= "€ #{offer.price}" %>
+              </a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
