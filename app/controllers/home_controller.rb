@@ -4,6 +4,10 @@ class HomeController < ApplicationController
 
   end
 
+  def profile
+     @user = current_user
+  end
+
   def search
     session[:search_name] = params[:name]
     session[:search_category] = params[:category_id]
