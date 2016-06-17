@@ -27,11 +27,10 @@
         <td><%= offer.category_id %></td>
         <td><%= offer.description  %></td>
         <td><%= offer.status %></td>
-        <td><%= link_to 'Edit', offers_path %></td>
+        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Edit all", offers_path %>
 <br><br<br>
 <h3>My rentals</h3>
 <table class="table">
