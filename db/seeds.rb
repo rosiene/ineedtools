@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 <<<<<<< HEAD
 Review.create([
-   {eval: 4, comment: "Good price", rent_id: 1 },
-   {eval: 3, comment: "Bad plug", rent_id: 2},
-   {eval: 5, comment: "PErfect", rent_id: 3}
+   {eval: 4, comment: "Good price"},
+   {eval: 3, comment: "Bad plug"},
+   {eval: 5, comment: "PErfect"}
   ])
 ||||||| merged common ancestors
 =======
