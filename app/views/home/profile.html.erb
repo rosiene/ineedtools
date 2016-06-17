@@ -1,0 +1,52 @@
+<h2>My profile</h2>
+<br>
+<ul>
+   <li>Name: <%=current_user.name%></li>
+   <li>Email: <%=current_user.email%></li>
+   <li>Zipcode: <%=current_user.zipcode%></li>
+   <li>Phonenumber: <%=current_user.phone%></li>
+   <li>Profile picture: <%=current_user.avatar%></li>
+</ul><br>
+<%= link_to 'Edit account', edit_user_registration_path %>
+<br><br>
+<h3>My offers</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Available</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @user.offers.each do |offer|  %>
+      <tr>
+        <td><%= offer.name %></td>
+        <td><%= offer.category_id %></td>
+        <td><%= offer.description  %></td>
+        <td><%= offer.status %></td>
+    <% end %>
+  </tbody>
+</table>
+<br><br<br>
+<h3>My rentals</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>From</th>
+      <th>Till</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @user.rents.each do |rent|  %>
+      <tr>
+         <td><%= rent.offer.name %></td>
+         <td><%= rent.offer.description %></td>
+         <td><%= rent.initial_date %></td>
+         <td><%= rent.final_date %></td>
+    <% end %>
+  </tbody>
+</table>
