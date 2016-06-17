@@ -6,4 +6,9 @@ class ReviewsController < ApplicationController
     review.save
     redirect_to rents_path
   end
+
+  def index
+    @reviews = Review.all
+  end
+  
 end

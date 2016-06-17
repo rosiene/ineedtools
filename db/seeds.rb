@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Review.create([
-   {eval: 4, comment: "Good price", rent_id: 1 },
-   {eval: 3, comment: "Bad plug", rent_id: 2},
-   {eval: 5, comment: "PErfect", rent_id: 3}
+   {eval: 4, comment: "Good price"},
+   {eval: 3, comment: "Bad plug"},
+   {eval: 5, comment: "PErfect"}
   ])
