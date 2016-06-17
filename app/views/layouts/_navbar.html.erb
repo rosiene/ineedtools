@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <a class="navbar-brand" href="/">I need tools!</a>
     </div>
 
@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <% if user_signed_in? %>
-          <li><%= link_to 'My Offers', offers_path %></li>
-          <li><%= link_to 'My Rents', rents_path %></li>
+          <li><%= link_to 'Browse tools', search_path %></li>
+          <li><%= link_to 'Post tool', new_offer_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+          <li><%= link_to 'Profile', profile_path %></li>
           <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
         <% else %>
           <li><%= link_to 'Sign in', new_user_session_path %></li>
