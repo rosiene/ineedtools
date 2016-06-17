@@ -27,6 +27,8 @@ gem 'devise'
 
 gem 'carrierwave'
 
+gem 'cloudinary'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use ActiveModel has_secure_password
