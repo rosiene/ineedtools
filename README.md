@@ -1,7 +1,7 @@
 # I NEED TOOLS
 [link](https://protected-tundra-10201.herokuapp.com/)
 
-Social Media about food!
+Website for rent tools!
 
 Developed by [Dennis](https://github.com/dennisdijkstra), [Fabiano](https://github.com/flgonzales) and [Rosiene](https://github.com/rosiene).
 
